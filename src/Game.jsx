@@ -22,7 +22,7 @@ function Game(props) {
                         <li onClick={() => {props.onClickVariant(index)}} key={index}>{item}</li>
                     ))
                 :   
-                    <Result correct={props.correct} questions={props.questions}/>       
+                    <Result correct={props.correct} questions={props.questions} setStep={props.setStep}/>       
                 }                
             </ul>
         </>
