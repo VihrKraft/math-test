@@ -12,6 +12,7 @@ function App() {
   // ФОрмулировака как для програмиста, 10-20 задач, 2 варианта
   const[correct, setCorrect] = useState(0)
 
+  // eslint-disable-next-line no-unused-vars
   const[userId, setUserId] = useState(null)
 
   const[step, setStep] = useState(0)
