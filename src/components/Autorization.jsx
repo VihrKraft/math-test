@@ -1,19 +1,22 @@
-import Game from './Game'
-import '../Autorisation.css'
+import '../Autorization.css'
 
 
 export const Autorisation = (props) => {
     return(
         <>
-        <form action="">
+        <form action="" onSubmit={(e) => props.handleSubmit(e)}>
             <h1 className='jumping'>Авторизация</h1>
             <div className="f-el">
                 <label className='title jumping'>{"Фамилия: "}</label>
-                <input type="text" onChange={(event) => props.changeSurname(event.target.value)}/>
+                <input type="text" onChange={(event) => props.setSurname(event.target.value.toLowerCase())}/>
+            </div>
+            <div className="f-el">
+                <label className='title jumping'>{"Имя: "}</label>
+                <input type="text" onChange={(event) => props.setName(event.target.value.toLowerCase())}/>
             </div>
             <div className="f-el">
                 <label className='title jumping'>{"Группа: "}</label>
-                <input type="text" onChange={(event) => props.changeGroup(event.target.value)}/>
+                <input type="text" onChange={(event) => props.setGroup(event.target.value.toLowerCase())}/>
             </div>
             <button>Отправить</button>
         </form>

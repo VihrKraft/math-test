@@ -2,7 +2,7 @@ import '../Game.css'
 import Result from './Result'
 
 
-function Game(props) {
+export const Game = (props) => {
     const percentage = Math.round(props.step/props.questions.length*100)
 
     const progbarstyles = {
@@ -22,11 +22,10 @@ function Game(props) {
                         <li onClick={() => {props.onClickVariant(index)}} key={index}>{item}</li>
                     ))
                 :   
+                    
                     <Result correct={props.correct} questions={props.questions} setStep={props.setStep}/>       
                 }                
             </ul>
         </>
     )
 }
-
-export default Game;

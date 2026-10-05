@@ -73,4 +73,11 @@ button {
     color: #fff;
     margin-top: 20px;
     cursor: pointer;
+    border: white 2px solid;
+}
+button:active 
+{
+    background-color: #fff;
+    color: black;
+    border: black 2px solid;
 }
