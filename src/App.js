@@ -52,7 +52,6 @@ function App() {
         if (inpError) throw inpError;
 
         if (inpData && inpData.length > 0) {
-          setUserId(inpData[0].id);
           setIsAuthorized(true);
         }
       }
