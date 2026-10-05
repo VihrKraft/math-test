@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.138820ef.css",
-    "main.js": "/static/js/main.ba3dd69d.js",
-    "static/js/453.eb57f1ad.chunk.js": "/static/js/453.eb57f1ad.chunk.js",
-    "static/media/background.jpg": "/static/media/background.523a37b8b54b1eb09ae3.jpg",
-    "index.html": "/index.html",
-    "main.138820ef.css.map": "/static/css/main.138820ef.css.map",
-    "main.ba3dd69d.js.map": "/static/js/main.ba3dd69d.js.map",
-    "453.eb57f1ad.chunk.js.map": "/static/js/453.eb57f1ad.chunk.js.map"
+    "main.css": "/math-test/static/css/main.4e9e5486.css",
+    "main.js": "/math-test/static/js/main.087d817e.js",
+    "static/js/453.eb57f1ad.chunk.js": "/math-test/static/js/453.eb57f1ad.chunk.js",
+    "static/media/background.jpg": "/math-test/static/media/background.523a37b8b54b1eb09ae3.jpg",
+    "index.html": "/math-test/index.html",
+    "main.4e9e5486.css.map": "/math-test/static/css/main.4e9e5486.css.map",
+    "main.087d817e.js.map": "/math-test/static/js/main.087d817e.js.map",
+    "453.eb57f1ad.chunk.js.map": "/math-test/static/js/453.eb57f1ad.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.138820ef.css",
-    "static/js/main.ba3dd69d.js"
+    "static/css/main.4e9e5486.css",
+    "static/js/main.087d817e.js"
   ]
 }
