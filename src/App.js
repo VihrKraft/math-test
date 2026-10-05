@@ -22,6 +22,21 @@ function App() {
 
   const[isAuthorized, setIsAuthorized] = useState(false)
 
+  const questions = [
+    {
+        title: 'Функция задана формулой y=x. Определите y при x=5',
+        variants: ['4', '5', '6'],
+        correct: 1,
+    },
+    {
+        title: 'Функция задана формулой y=3x. Определите y при x=3',
+        variants: ['8', '9', '10'],
+        correct: 1,
+    },
+  ];
+
+  const question = questions[step];
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,7 +59,7 @@ function App() {
               'name': name,
               'surname': surname,
               'group': group,
-              'percent': 0
+              'percent': correct/questions.length*100
             }
           ])
           .select();
@@ -62,20 +77,7 @@ function App() {
     }
   };
 
-  const questions = [
-    {
-        title: 'Функция задана формулой y=x. Определите y при x=5',
-        variants: ['4', '5', '6'],
-        correct: 1,
-    },
-    {
-        title: 'Функция задана формулой y=3x. Определите y при x=3',
-        variants: ['8', '9', '10'],
-        correct: 1,
-    },
-  ];
-
-  const question = questions[step];
+  
 
   function onClickVariant(index) {
     if (index === questions[step]['correct']) {
