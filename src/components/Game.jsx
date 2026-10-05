@@ -1,4 +1,4 @@
-import './Game.css'
+import '../Game.css'
 import Result from './Result'
 
 

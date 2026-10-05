@@ -1,12 +1,35 @@
 import { useState } from 'react';
 import './App.css';
-import Game from './Game'
+import { Autorisation } from './components/Autorisation';
+import { createClient } from '@supabase/supabase-js';
 
 
 function App() {
+  const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+  const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseAnonKey) {
+    console.error("Проверьте переменные окружения Supabase!");
+  }
+
+  // ФОрмулировака как для програмиста, 10-20 задач, 2 варианта
   const[correct, setCorrect] = useState(0)
 
   const[step, setStep] = useState(0)
+
+  const[surname, setSurname] = useState('');
+
+  const[group, setGroup] = useState('');
+
+  const changeGroup = (value) =>
+  {
+    setGroup(value)
+  }
+
+  const changeSurname = (value) =>
+  {
+    setSurname(value)
+  }
 
   const questions = [
     {
@@ -32,10 +55,11 @@ function App() {
 
   return (
     <div className="App">
-      <Game questions={questions} question={question} onClickVariant={onClickVariant} step={step} setStep={setStep} correct={correct}/>
+      <Autorisation questions={questions} question={question} onClickVariant={onClickVariant} step={step} setStep={setStep} correct={correct} changeGroup={changeGroup} changeSurname={changeSurname}/>
     </div>
     
   );
 }
 
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 export default App;
