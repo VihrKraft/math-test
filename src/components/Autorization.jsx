@@ -20,8 +20,6 @@ export const Autorisation = (props) => {
             </div>
             <button>Отправить</button>
         </form>
-
-        {/* <Game questions={props.questions} question={props.question} onClickVariant={props.onClickVariant} step={props.step} setStep={props.setStep} correct={props.correct}/> */}
         </>
     )
 }
