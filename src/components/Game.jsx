@@ -1,5 +1,4 @@
 import '../Game.css'
-import Result from './Result'
 
 
 export const Game = (props) => {
@@ -22,8 +21,7 @@ export const Game = (props) => {
                         <li onClick={() => {props.onClickVariant(index)}} key={index}>{item}</li>
                     ))
                 :   
-                    
-                    <Result correct={props.correct} questions={props.questions} setStep={props.setStep}/>       
+                    null
                 }                
             </ul>
         </>

@@ -3,7 +3,7 @@ export const Result = (props) => {
         <>
             <div className="result">
                 <img src="./congratulation.png" alt="Поздравление" />
-                <h2>Ваш результат {props.correct/props.questions.length*100}%</h2>
+                <h2>Ваш результат {Math.round(props.correct/props.questions.length*100)}%</h2>
             </div>
         </>
     )
