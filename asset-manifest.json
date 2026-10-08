@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/math-test/static/css/main.bc545e53.css",
+    "main.css": "/math-test/static/css/main.62e61386.css",
     "main.js": "/math-test/static/js/main.018b4d03.js",
     "static/js/453.eb57f1ad.chunk.js": "/math-test/static/js/453.eb57f1ad.chunk.js",
     "static/media/background.jpg": "/math-test/static/media/background.523a37b8b54b1eb09ae3.jpg",
@@ -66,12 +66,12 @@
     "static/media/KaTeX_Size3-Regular.woff": "/math-test/static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/KaTeX_Size3-Regular.woff2": "/math-test/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "index.html": "/math-test/index.html",
-    "main.bc545e53.css.map": "/math-test/static/css/main.bc545e53.css.map",
+    "main.62e61386.css.map": "/math-test/static/css/main.62e61386.css.map",
     "main.018b4d03.js.map": "/math-test/static/js/main.018b4d03.js.map",
     "453.eb57f1ad.chunk.js.map": "/math-test/static/js/453.eb57f1ad.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc545e53.css",
+    "static/css/main.62e61386.css",
     "static/js/main.018b4d03.js"
   ]
 }
