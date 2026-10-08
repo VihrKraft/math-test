@@ -18,10 +18,6 @@ export const Autorisation = (props) => {
                 <label className='title jumping'>{"Группа: "}</label>
                 <input type="text" onChange={(event) => props.setGroup(event.target.value.toLowerCase())}/>
             </div>
-            <div className="f-el">
-                <label className='title jumping'>{"Вариант: "}</label>
-                <input type="text" onChange={(event) => props.setOption(event.target.value)}/>
-            </div>
             <button>Отправить</button>
         </form>
         </>
