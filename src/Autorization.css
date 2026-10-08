@@ -50,7 +50,7 @@ form {
 }
 input {
     border-radius: 0.25rem;
-    width: 20vw;
+    width: 250px;
     height: 5vh;
     font-size: 1rem;
     transition: all 0.3s ease-in-out;

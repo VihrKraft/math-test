@@ -89,3 +89,24 @@ body {
 .App .result img {
     width: 150px;
 }
+
+@media(max-width: 768px) {
+  .App {
+    transform: scale(80%);
+  }
+}
+@media(max-width: 600px) {
+  .App {
+    transform: scale(70%);
+  }
+}
+@media(max-width: 500px) {
+  .App {
+    transform: scale(60%);
+  }
+}
+@media(max-width: 400px) {
+  .App {
+    transform: scale(50%);
+  }
+}
