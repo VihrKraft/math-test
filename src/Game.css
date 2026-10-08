@@ -12,3 +12,6 @@
     transition: all 0.3s ease-in-out; 
     background: linear-gradient(90deg, rgba(18, 231, 48, 1) 0%, rgba(0, 212, 255, 1) 100%); 
 }
+.quess-title {
+    font-size: 15pt;
+}

@@ -81,3 +81,9 @@ button:active
     color: black;
     border: black 2px solid;
 }
+.f-el li.active {
+    background: rgb(18, 231, 48); 
+    color: white;
+    transform: scale(102%);
+    transition: all 0.3s ease-in-out;
+}

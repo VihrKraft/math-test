@@ -4,7 +4,7 @@ import '../Autorization.css'
 export const Autorisation = (props) => {
     return(
         <>
-        <form action="" onSubmit={(e) => props.handleSubmit(e)}>
+        <form action="" onSubmit={(e) => props.handleSubmit(e, props.option)}>
             <h1 className='jumping'>Авторизация</h1>
             <div className="f-el">
                 <label className='title jumping'>{"Фамилия: "}</label>
@@ -17,6 +17,10 @@ export const Autorisation = (props) => {
             <div className="f-el">
                 <label className='title jumping'>{"Группа: "}</label>
                 <input type="text" onChange={(event) => props.setGroup(event.target.value.toLowerCase())}/>
+            </div>
+            <div className="f-el">
+                <label className='title jumping'>{"Вариант: "}</label>
+                <input type="text" onChange={(event) => props.setOption(event.target.value)}/>
             </div>
             <button>Отправить</button>
         </form>
