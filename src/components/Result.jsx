@@ -1,3 +1,6 @@
+import congPin from '../img/congratulation.jpg'
+
+
 export const Result = (props) => {
     return (
         <>
