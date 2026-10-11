@@ -31,7 +31,7 @@ function App() {
 
   const[isAuthorized, setIsAuthorized] = useState(false)
 
-  const[option, setOption] = useState(0);
+  const[option, setOption] = useState(null);
 
   const [questions, setQuestions] = useState([]);
 
@@ -162,7 +162,8 @@ function App() {
           name={name} 
           group={group} 
           handleSubmit={handleSubmit}
-          setOption={setOption}/>
+          setOption={setOption}
+          option={option}/>
       }
     </div>
   );
