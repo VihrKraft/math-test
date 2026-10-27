@@ -17,7 +17,7 @@ function App() {
 
   const[correct, setCorrect] = useState(0)
 
-  const[userId, setUserId] = useState(null);
+  const[userId, setUserId] = useState(0);
 
   const[step, setStep] = useState(0)
 
