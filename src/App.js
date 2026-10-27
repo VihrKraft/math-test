@@ -13,8 +13,6 @@ const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 function App() {
-
-  // ФОрмулировака как для програмиста, 10-20 задач, 2 варианта
   const[attempt, setAttempt] = useState(false);
 
   const[correct, setCorrect] = useState(0)
