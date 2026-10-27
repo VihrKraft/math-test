@@ -1,6 +1,7 @@
 import congPin from '../img/congratulation.jpg'
 import 'katex/dist/katex.min.css';
 import { InlineMath } from 'react-katex';
+import { Fragment } from 'react/jsx-runtime';
 
 
 export const Result = (props) => {
@@ -18,32 +19,32 @@ export const Result = (props) => {
                     const isCorrectAnwser = props.clickedRes[index] === question.correct;
 
                     return (
-                    <>
-                        <div key={index}>
-                            <h2 style={{textAlign: 'justify'}}>{question.title}</h2>
-                            <ul>
-                                {question.variants.map((variant, id) => {
+                        <Fragment key={index}>
+                            <div>
+                                <h2 style={{textAlign: 'justify'}}>{question.title}</h2>
+                                <ul>
+                                    {question.variants.map((variant, id) => {
 
-                                    const isChosenVar = id === props.clickedRes[index]
-                                    const isActualCorrectAnswer = id === question.correct
-                                    
-                                    let bgc
+                                        const isChosenVar = id === props.clickedRes[index]
+                                        const isActualCorrectAnswer = id === question.correct
+                                        
+                                        let bgc
 
-                                    if (isCorrectAnwser && isChosenVar) {
-                                        bgc = {backgroundColor: '#20d500'}
-                                    } else if (!isCorrectAnwser && isChosenVar) {
-                                        bgc = {backgroundColor: '#e50404'}
-                                    } else if (!isCorrectAnwser && isActualCorrectAnswer) {
-                                        bgc = {backgroundColor: '#42aaf5'}
-                                    }
+                                        if (isCorrectAnwser && isChosenVar) {
+                                            bgc = {backgroundColor: '#20d500'}
+                                        } else if (!isCorrectAnwser && isChosenVar) {
+                                            bgc = {backgroundColor: '#e50404'}
+                                        } else if (!isCorrectAnwser && isActualCorrectAnswer) {
+                                            bgc = {backgroundColor: '#42aaf5'}
+                                        }
 
-                                    return <li style={bgc} key={id}><InlineMath math={variant}/></li>
-                                })}
-                            </ul>
-                        </div>
-                        <br/>
-                    </>
-                )})}
+                                        return <li style={bgc} key={id}><InlineMath math={variant}/></li>
+                                    })}
+                                </ul>
+                            </div>
+                            <br/>
+                        </Fragment>
+                    )})}
             </div>
         </>
     )

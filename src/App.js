@@ -31,6 +31,10 @@ function App() {
 
   const[option, setOption] = useState(0);
 
+  const options = questionsWithVariants.map((_, id) => {
+    return id+1
+  });
+
   const [questions, setQuestions] = useState([]);
 
   const [clickedRes, setClickedRes] = useState([]);
@@ -41,12 +45,10 @@ function App() {
     const selectedOption = Number(option); 
     let currentQuestions = [];
 
-    if (selectedOption === 1) {
-      currentQuestions = questionsWithVariants[0]
-    } else if (selectedOption === 2) {
-      currentQuestions = questionsWithVariants[1]
+    if (selectedOption > 0) {
+      currentQuestions = questionsWithVariants[selectedOption-1]
     } else {
-      alert('Ошибка: Не указан вариант! или указан некорректно!');
+      alert('Ошибка: Не выбран вариант!');
       return 1;
     }
 
@@ -170,7 +172,8 @@ function App() {
           group={group} 
           handleSubmit={handleSubmit}
           setOption={setOption}
-          option={option}/>
+          option={option}
+          options={options}/>
       }
     </div>
   );

@@ -20,7 +20,11 @@ export const Autorisation = (props) => {
             </div>
             <div className="f-el">
                 <label className='title jumping'>{"Вариант: "}</label>
-                <input type="text" value={props.option} placeholder='1 или 2' onChange={(event) => props.setOption(event.target.value.slice(0, 1))}/>
+                <ul style={{display: 'flex', flexDirection: 'row', justifyContent: 'right', width: 'auto'}}>
+                    {props.options.map((option, id) => (
+                        <li key={id} style={{margin: '0 5px'}} className={`clickable ${option === props.option ? 'active' : ''}`} onClick={() => props.setOption(option)}>{option}</li>
+                    ))}
+                </ul>
             </div>
             <button>Отправить</button>
         </form>
