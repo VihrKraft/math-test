@@ -65,7 +65,7 @@ function App() {
       const { data: searchData, error: searchError } = await supabase
         .from('users_results')
         .select()
-        .match({'surname': surname, 'name': name, 'group': group})
+        .match({'surname': surname.toLowerCase(), 'name': name.toLowerCase(), 'group': group.toLowerCase()})
 
       if (searchError) throw searchError;
 
@@ -81,9 +81,9 @@ function App() {
           .from('users_results')
           .insert([
             { 
-              'name': name,
-              'surname': surname,
-              'group': group,
+              'name': name.toLowerCase(),
+              'surname': surname.toLowerCase(),
+              'group': group.toLowerCase(),
               'attempt': attempt,
               'correct': correct,
               'option': option
