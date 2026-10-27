@@ -17,7 +17,7 @@ function App() {
 
   const[correct, setCorrect] = useState(0)
 
-  const[userId, setUserId] = useState(0);
+  const[userId, setUserId] = useState(null);
 
   const[step, setStep] = useState(0)
 
@@ -29,7 +29,7 @@ function App() {
 
   const[isAuthorized, setIsAuthorized] = useState(false)
 
-  const[option, setOption] = useState(null);
+  const[option, setOption] = useState(0);
 
   const [questions, setQuestions] = useState([]);
 
