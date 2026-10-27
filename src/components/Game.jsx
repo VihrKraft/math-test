@@ -20,7 +20,7 @@ export const Game = (props) => {
             <ul>
                 {props.step !== props.questions.length ?
                     props.question.variants.map((item, index) => (   
-                        <li onClick={() => {props.onClickVariant(index)}} key={index}><InlineMath math={item}/></li>
+                        <li onClick={() => {props.onClickVariant(index)}} key={index} className='answer-option'><InlineMath math={item}/></li>
                     ))
                 :   
                     null

@@ -35,6 +35,8 @@ function App() {
 
   const [questions, setQuestions] = useState([]);
 
+  const [clickedRes, setClickedRes] = useState([]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -75,6 +77,7 @@ function App() {
         setAttempt(searchData[0].attempt)
         setCorrect(searchData[0].correct)
         setOption(searchData[0].option)
+        setClickedRes(searchData[0].userChoice.map(Number))
       } else {
         const { data: inpData, error: inpError } = await supabase
           .from('users_results')
@@ -113,6 +116,10 @@ function App() {
   
     setStep(step + 1)
 
+    const curChoice = [...clickedRes, index];
+
+    setClickedRes(curChoice)
+
     if (index === question.correct) {
       setCorrect(correct + 1)
     }
@@ -124,7 +131,7 @@ function App() {
       try {
         const {error} = await supabase
           .from('users_results')
-          .update({ 'attempt': true, 'correct': actualCorrect, 'option': option})
+          .update({ 'attempt': true, 'correct': actualCorrect, 'userChoice': curChoice})
           .eq('id', userId)
         
           if (error) throw error;
@@ -141,10 +148,12 @@ function App() {
           <Result 
             correct={correct} 
             questions={questions} 
+            question={question} 
             surname={surname} 
             name={name} 
             group={group}
-            option={option}/> 
+            option={option}
+            clickedRes={clickedRes}/>
         :
           <Game 
             questions={questions} 
