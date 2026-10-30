@@ -74,7 +74,7 @@ body:has(.App .Result) {
 
 .App .result {
     text-align: center;
-    margin-top: auto;
+    margin-top: 30px; 
 }
 
 .App .result button {
@@ -109,26 +109,29 @@ body:has(.App .Result) {
 @media(max-width: 768px) {
   .App {
     transform: scale(80%);
+    transform-origin: top center;
   }
 }
 @media(max-width: 500px) {
   .App {
     transform: scale(70%);
+    transform-origin: top center;
   }
 }
 @media(max-width: 430px) {
   .App {
     transform: scale(60%);
+    transform-origin: top center;
   }
 }
 @media(max-width: 360px) {
   .App {
     transform: scale(55%);
+    transform-origin: top center;
   }
 } 
 @media(max-height: 480px) {
-    .App {
-        width: 80vw;
-    }
+  .App {
+      width: 80vw;
+  }
 }
-
