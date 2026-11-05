@@ -42,6 +42,7 @@ export const Result = (props) => {
                                     })}
                                 </ul>
                             </div>
+                            <p>{!isCorrectAnwser ? `Примечание: ${question.remark}` : null}</p>
                             <br/>
                         </Fragment>
                     )})}
