@@ -42,27 +42,17 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const selectedOption = Number(option); 
-    let currentQuestions = [];
-
-    if (selectedOption > 0) {
-      currentQuestions = questionsWithVariants[selectedOption-1]
-    } else {
-      alert('Ошибка: Не выбран вариант!');
-      return 1;
-    }
-
-    setQuestions(currentQuestions)
-
     const cleanName = name.trim();
     const cleanSurname = surname.trim();
     const cleanGroup = group.trim();
 
     if (cleanName === '' || cleanSurname === '' || cleanGroup === '') {
       alert('Ошибка: Поля не могут быть пустыми!');
-      return 1;
+      return;
     }
-    
+
+    let finalOption = Number(option); 
+
     try {
       const { data: searchData, error: searchError } = await supabase
         .from('users_results')
@@ -72,13 +62,23 @@ function App() {
       if (searchError) throw searchError;
 
       if (searchData.length !== 0) {
+        const dbUser = searchData[0];
+        
         setIsAuthorized(true);
-        setUserId(searchData[0].id)
-        setAttempt(searchData[0].attempt)
-        setCorrect(searchData[0].correct)
-        setOption(searchData[0].option)
-        setClickedRes(searchData[0].userChoice.map(Number))
+        setUserId(dbUser.id);
+        setAttempt(dbUser.attempt);
+        setCorrect(dbUser.correct);
+        setOption(dbUser.option);
+        setClickedRes(dbUser.userChoice.map(Number));
+
+        finalOption = Number(dbUser.option); 
+
       } else {
+        if (finalOption <= 0) {
+          alert('Ошибка: Не выбран вариант!');
+          return;
+        }
+
         const { data: inpData, error: inpError } = await supabase
           .from('users_results')
           .insert([
@@ -88,7 +88,7 @@ function App() {
               'group': group.toLowerCase(),
               'attempt': attempt,
               'correct': correct,
-              'option': option
+              'option': finalOption
             }
           ])
           .select();
@@ -97,15 +97,18 @@ function App() {
 
         if (inpData && inpData.length > 0) {
           setIsAuthorized(true);
-          setUserId(inpData[0].id)
+          setUserId(inpData[0].id);
         }
       }
+        
+      setQuestions(questionsWithVariants[finalOption - 1]);
       
     } catch (err) {
       console.error("Supabase Error:", err);
       alert('Не удалось войти');
     }
   };
+
 
   const question = questions[step] || null;
 
